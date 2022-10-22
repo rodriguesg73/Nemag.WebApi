@@ -1,0 +1,59 @@
+﻿@page
+@model Nemag.FrontEnd.Pages.Login.IndexModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Pages/Shared/Base.cshtml";
+}
+@section Scripts{
+    <script src="https://cdn.jsdelivr.net/gh/jquery-form/form@4.3.0/dist/jquery.form.min.js" integrity="sha384-qlmct0AOBiA2VPZkMY3+2WqkHtIQ9lSdAsAn5RUJD/3vA5MKDgSGcdmIv4ycVxyn" crossorigin="anonymous"></script>
+    <script src="~/js/pages/Login/Index.js?v=@(Nemag.FrontEnd.Global.AppVersion)"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('body').addClass('gray-bg');
+        });
+    </script>
+}
+<div class="ajax-request-progress" style="display: none">
+    <div class="middle-box text-center animated fadeInDown">
+        <div class="sk-spinner sk-spinner-wandering-cubes">
+            <div class="sk-cube1"></div>
+            <div class="sk-cube2"></div>
+        </div>
+    </div>
+    <div class="middle-box text-center" style="display: none">
+        <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+    </div>
+</div>
+
+<div class="ajax-request-disconnect" style="display: none">
+    <div class="middle-box text-center animated fadeInDown">
+        <div>
+            <div class="text-center">
+                <span style="font-size: 150px;"><i class="fa fa-plug"></i></span>
+            </div>
+            <div class="text-center">
+                <a href="javascript:;" class="btn btn-info" onclick="document.location.reload(true);">Tentar novamente</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="middle-box text-center loginscreen animated fadeInDown">
+    <div>
+        <div>
+            <h1 class="logo-name">NEMAG</h1>
+        </div>
+        <form id="formLoginIndex" method="post" class="m-t" role="form">
+            <div class="form-group">
+                <input id="inputLoginUsuario" type="text" class="form-control text-center" name="Usuario" asp-for="LoginIndex.Usuario" placeholder="Usuário..." maxlength="20">
+            </div>
+            <div class="form-group">
+                <input id="inputLoginSenha" type="password" class="form-control text-center" name="Senha" asp-for="LoginIndex.Senha" placeholder="Senha..." onkeypress="AoPressionarEnter(this, event, EfetuarLoginApi, null);" required>
+            </div>
+            <button type="button" class="btn btn-primary block full-width m-b" onclick="EfetuarLoginApi();">Login</button>
+        </form>
+    </div>
+</div>

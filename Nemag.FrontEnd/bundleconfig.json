@@ -1,0 +1,14 @@
+[
+  {
+    "outputFileName": "css/site.min.css",
+    "inputFiles": [ "css/*(*.css|!(*.min.css))" ]
+  },
+  {
+    "outputFileName": "js/site.min.js",
+    "inputFiles": [ "js/*(*.js|!(*.min.js))" ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  }
+]

@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32901.215
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nemag.WebApi", "Nemag.WebApi\Nemag.WebApi.csproj", "{48B7F0A4-2A71-43B3-A6F6-E5BC765C4C3A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nemag.Database", "..\Nemag.Database\Nemag.Database\Nemag.Database.csproj", "{0FD5EAFE-4B47-427A-9091-7E123A8FA84B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nemag.Auxiliar", "..\Nemag.Auxiliar\Nemag.Auxiliar\Nemag.Auxiliar.csproj", "{4424A4B3-724E-4530-88EF-170CA73921F8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nemag.Core", "Nemag.Core\Nemag.Core.csproj", "{568E33DC-05AC-41E8-82F3-B8952D52D917}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{48B7F0A4-2A71-43B3-A6F6-E5BC765C4C3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48B7F0A4-2A71-43B3-A6F6-E5BC765C4C3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48B7F0A4-2A71-43B3-A6F6-E5BC765C4C3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48B7F0A4-2A71-43B3-A6F6-E5BC765C4C3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FD5EAFE-4B47-427A-9091-7E123A8FA84B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FD5EAFE-4B47-427A-9091-7E123A8FA84B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FD5EAFE-4B47-427A-9091-7E123A8FA84B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FD5EAFE-4B47-427A-9091-7E123A8FA84B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4424A4B3-724E-4530-88EF-170CA73921F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4424A4B3-724E-4530-88EF-170CA73921F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4424A4B3-724E-4530-88EF-170CA73921F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4424A4B3-724E-4530-88EF-170CA73921F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{568E33DC-05AC-41E8-82F3-B8952D52D917}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{568E33DC-05AC-41E8-82F3-B8952D52D917}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{568E33DC-05AC-41E8-82F3-B8952D52D917}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{568E33DC-05AC-41E8-82F3-B8952D52D917}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {753A1B29-5175-4723-B019-F4C3C6227B79}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://unishipping.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = ..\\Nemag.Auxiliar\\Nemag.Auxiliar\\Nemag.Auxiliar.csproj
+		SccProjectName1 = ../Nemag.Auxiliar/Nemag.Auxiliar
+		SccLocalPath1 = ..\\Nemag.Auxiliar\\Nemag.Auxiliar
+		SccProjectUniqueName2 = ..\\Nemag.Database\\Nemag.Database\\Nemag.Database.csproj
+		SccProjectName2 = ../Nemag.Database/Nemag.Database
+		SccLocalPath2 = ..\\Nemag.Database\\Nemag.Database
+		SccProjectUniqueName3 = Nemag.Core\\Nemag.Core.csproj
+		SccProjectName3 = Nemag.Core
+		SccLocalPath3 = Nemag.Core
+		SccProjectUniqueName4 = Nemag.WebApi\\Nemag.WebApi.csproj
+		SccProjectName4 = Nemag.WebApi
+		SccLocalPath4 = Nemag.WebApi
+	EndGlobalSection
+EndGlobal

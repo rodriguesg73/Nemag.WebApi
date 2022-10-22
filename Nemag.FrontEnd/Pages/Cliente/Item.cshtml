@@ -1,0 +1,80 @@
+﻿@page
+@{
+    ViewData["Title"] = "Usuário";
+    Layout = "~/Pages/Shared/Completo.cshtml";
+}
+@section Scripts{
+    <script src="~/plugins/dataTables/1.10.13/js/datatables.min.js?v=@(Nemag.FrontEnd.Global.AppVersion)"></script>
+    <script src="~/plugins/dataTables/1.10.13/js/dataTables.bootstrap4.min.js?v=@(Nemag.FrontEnd.Global.AppVersion)"></script>
+    <script src="~/js/pages/_Helper/DataTable.js?v=@(Nemag.FrontEnd.Global.AppVersion)"></script>
+    <script src="~/js/pages/_Helper/Pesquisa.js?v=@(Nemag.FrontEnd.Global.AppVersion)"></script>
+    <script src="~/js/pages/Cliente/Item.js?v=@(Nemag.FrontEnd.Global.AppVersion)"></script>
+    <script src="~/js/pages/Pessoa/Contato/Index.js?v=@(Nemag.FrontEnd.Global.AppVersion)"></script>
+}
+    @section Styles{
+    <link href="~/plugins/dataTables/1.10.13/css/datatables.min.css?v=@(Nemag.FrontEnd.Global.AppVersion)" rel="stylesheet">
+}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="tabs-container">
+                <ul class="nav nav-tabs" role="tablist">
+                    <li><a class="nav-link active" data-toggle="tab" href="#tabClienteItem">Informações básicas</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div role="tabpanel" id="tabClienteItem" class="tab-pane active">
+                        <div class="panel-body animated fadeIn">
+                            <div class="row">
+                                <div class="col-custom-36">
+                                    <h3 class="form-title">Informações básicas</h3>
+                                    <form id="formClienteItem" autocomplete="off">
+                                        <input type="hidden" name="Id" value="0" />
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Nome completo:</label>
+                                                <div class="input-group">
+                                                    <input type="hidden" name="PessoaId" value="0" />
+                                                    <input type="text" name="Nome" class="form-control" required />
+                                                    <span class="input-group-append">
+                                                        <button type="button" class="btn btn-primary" onclick="LimparPesquisaItemGenerica(this);">
+                                                            <i class="fa fa-eraser"></i>
+                                                        </button>
+                                                        <button type="button" class="btn btn-primary" onclick="EfetuarPesquisaPessoaItem(this);">
+                                                            <i class="fa fa-search"></i>
+                                                        </button>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-custom-36">
+                                    <h3 class="form-title" style="margin-top:30px">Contatos</h3>
+                                    <form id="formPessoaContatoLista">
+                                        <div class="row titulo text-center">
+                                            <div class="col-md-12"><p>Não há registros a serem exibidos</p></div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-custom-33">&nbsp;</div>
+                                <div class="col-custom-3">
+                                    <button type="button" class="col-md-12 btn btn-primary" onclick="AdicionarPessoaContatoItem()"><i class="fa fa-plus"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="pull-right">
+                <a href="javascript:;" onclick="Voltar();" class="btn btn-w-m btn-primary">Voltar</a>
+                <a href="javascript:;" onclick="SalvarClienteItem();" class="btn btn-w-m btn-primary">Salvar</a>
+            </div>
+        </div>
+    </div>

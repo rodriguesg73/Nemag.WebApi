@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nemag Prisma</title>
+    <link href="~/font-awesome/css/font-awesome.css?v=@(Nemag.FrontEnd.Global.AppVersion)" rel="stylesheet">
+    <link href="~/plugins/jquery-ui/1.12.1/css/jquery-ui.min.css?v=@(Nemag.FrontEnd.Global.AppVersion)" rel="stylesheet">
+    <link href="~/css/bootstrap.min.css?v=@(Nemag.FrontEnd.Global.AppVersion)" rel="stylesheet">
+    <link href="~/css/animate.css?v=@(Nemag.FrontEnd.Global.AppVersion)" rel="stylesheet">
+    <link href="~/css/style.css?v=@(Nemag.FrontEnd.Global.AppVersion)" rel="stylesheet">
+    @RenderSection("Styles", required: false)
+    <link href="~/css/custom.css?v=@(Nemag.FrontEnd.Global.AppVersion)" rel="stylesheet">
+</head>
+
+<body>
+    @RenderBody()
+
+    <!-- Mainly scripts -->
+    <script src="~/js/template/jquery-3.1.1.min.js?v=@(Nemag.FrontEnd.Global.AppVersion)"></script>
+    <script src="~/js/template/popper.min.js?v=@(Nemag.FrontEnd.Global.AppVersion)"></script>
+    <script src="~/js/template/bootstrap.min.js?v=@(Nemag.FrontEnd.Global.AppVersion)"></script>
+
+    <!-- Custom and plugin javascript -->
+    <script src="~/plugins/jquery-ui/1.12.1/js/jquery-ui.min.js?v=@(Nemag.FrontEnd.Global.AppVersion)"></script>
+    <script src="~/plugins/slimscroll/1.3.6/js/jquery.slimscroll.min.js?v=@(Nemag.FrontEnd.Global.AppVersion)"></script>
+    <script src="~/plugins/metisMenu/2.7.7/js/jquery.metisMenu.js?v=@(Nemag.FrontEnd.Global.AppVersion)"></script>
+    <script src="~/plugins/pace/1.0.0/js/pace.min.js?v=@(Nemag.FrontEnd.Global.AppVersion)"></script>
+    <script src="~/plugins/jquery.cookie/1.4.1/js/jquery.cookie.js?v=@(Nemag.FrontEnd.Global.AppVersion)"></script>
+    <script src="~/plugins/validate/1.15.1/js/jquery.validate.min.js?v=@(Nemag.FrontEnd.Global.AppVersion)"></script>
+    <script src="~/plugins/validate/1.15.1/js/jquery.validate.pt-br.js?v=@(Nemag.FrontEnd.Global.AppVersion)"></script>
+    <script src="~/plugins/chosen/1.1.0/js/jquery.chosen.js?v=@(Nemag.FrontEnd.Global.AppVersion)"></script>
+    <script src="~/plugins/jasny/3.1.2/js/jasny-bootstrap.min.js?v=@(Nemag.FrontEnd.Global.AppVersion)"></script>
+    <script src="~/plugins/jquery.mask/1.14.16/js/jquery.mask.js?v=@(Nemag.FrontEnd.Global.AppVersion)"></script>
+    <script src="~/plugins/bootbox/5.5.2/js/bootbox.js?v=@(Nemag.FrontEnd.Global.AppVersion)"></script>
+    <script src="~/js/template/inspinia.js?v=@(Nemag.FrontEnd.Global.AppVersion)"></script>
+    <script src="~/js/pages/Auxiliar.js?v=@(Nemag.FrontEnd.Global.AppVersion)"></script>
+    <script src="~/js/pages/_Base/Base.js?v=@(Nemag.FrontEnd.Global.AppVersion)"></script>
+    <script src="~/js/pages/_Helper/Modal.js?v=@(Nemag.FrontEnd.Global.AppVersion)"></script>
+
+    @RenderSection("Scripts", required: false)
+    @RenderSection("Modals", required: false)
+    @RenderSection("BaseHtml", required: false)
+</body>
+</html>

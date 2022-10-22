@@ -1,0 +1,78 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Pages/Shared/Base.cshtml";
+}
+@section Styles {
+    <link href="~/css/publico.css?v=@(Nemag.FrontEnd.Global.AppVersion)" rel="stylesheet">
+    @RenderSection("Styles", false)
+}
+@section Scripts {
+    <script src="~/js/pages/_Base/Publico.js?v=@(Nemag.FrontEnd.Global.AppVersion)"></script>
+    @RenderSection("Scripts", false)
+}
+@section Modals {
+    @RenderSection("Modals", false)
+}
+@section BaseHtml {
+    @RenderSection("BaseHtml", false)
+}
+<div class="ajax-request-progress" style="display: none">
+    <div class="middle-box text-center animated fadeInDown">
+        <div class="sk-spinner sk-spinner-wandering-cubes">
+            <div class="sk-cube1"></div>
+            <div class="sk-cube2"></div>
+        </div>
+    </div>
+</div>
+
+<div class="ajax-request-disconnect" style="display: none">
+    <div class="middle-box text-center animated fadeInDown">
+        <div>
+            <div class="text-center">
+                <span style="font-size: 150px;"><i class="fa fa-plug"></i></span>
+            </div>
+            <div class="text-center">
+                <a href="javascript:;" class="btn btn-info" onclick="document.location.reload(true);">Tentar novamente</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="bloqueio-acesso" style="display: none">
+    <div class="middle-box text-center lockscreen animated fadeInDown">
+        <div>
+            <form id="formLoginAcessoRenovacaoItem">
+                <h3>Usuário não encontrado</h3>
+                <div class="form-group">
+                    <input name="Senha" type="password" class="form-control" style="display: none;" required>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <a href="javascript:;" class="btn btn-info col-md-5" style="display:none;" onclick="RenovarLoginAcessoItem($(this));">Desbloquear</a>
+                        <a href="/Login/Index" class="btn btn-info col-md-5">Efetuar Login</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div id="wrapper">
+    <div id="page-wrapper" class="gray-bg">
+        <div class="row border-bottom white-bg">
+            <nav class="navbar navbar-expand-lg navbar-static-top" role="navigation">
+                <div class="navbar-collapse collapse" id="navbar">
+                    @RenderSection("Menu", false)
+                </div>
+            </nav>
+        </div>
+        <div class="wrapper wrapper-content animated fadeInRight">
+            @RenderBody()
+        </div>
+        <div class="footer">
+            <div class="text-center">
+                <strong>Copyright</strong>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,63 @@
+﻿@page
+@{
+    ViewData["Title"] = "Lista de ArquivoTramitadors";
+    Layout = "~/Pages/Shared/Completo.cshtml";
+}
+@section Scripts{
+    <script src="~/plugins/dataTables/1.10.13/js/datatables.min.js?v=@(Nemag.FrontEnd.Global.AppVersion)"></script>
+    <script src="~/plugins/dataTables/1.10.13/js/dataTables.bootstrap4.min.js?v=@(Nemag.FrontEnd.Global.AppVersion)"></script>
+    <script src="~/js/pages/_Helper/DataTable.js?v=@(Nemag.FrontEnd.Global.AppVersion)"></script>
+    <script src="~/js/pages/Arquivo/Tramitador/Lista.js?v=@(Nemag.FrontEnd.Global.AppVersion)"></script>
+}
+@section Styles{
+    <link href="~/plugins/dataTables/1.10.13/css/datatables.min.css?v=@(Nemag.FrontEnd.Global.AppVersion)" rel="stylesheet">
+}
+<div class="row">
+    <div class="col-custom-36">
+        <div class="ibox">
+            <div class="ibox-title"><h5>Filtros</h5></div>
+            <div class="ibox-content">
+                <form id="formFiltroItem">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label>Nome:</label>
+                            <input type="text" name="Nome" class="form-control" required />
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="ibox-footer">
+                <div class="pull-right">
+                    <a href="javascript:;" onclick="EfetuarPesquisaArquivoTramitadorLista();" class="btn btn-w-m btn-primary">Buscar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-custom-36">
+        <div class="tabs-container">
+            <ul class="nav nav-tabs">
+                <li><a class="nav-link active" data-toggle="tab" href="#tab-1"> @ViewData["Title"]</a></li>
+            </ul>
+            <div class="tab-content">
+                <div id="tab-1" class="tab-pane active">
+                    <div class="panel-body animated fadeIn">
+                        <div class="table-responsive">
+                            <table id="tableArquivoTramitadorLista" class="table table-bordered table-hover" style="width:100%;"></table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-custom-36">
+        <div class="pull-right">
+            <a href="javascript:;" onclick="Voltar();" class="btn btn-w-m btn-primary">Voltar</a>
+            <a href="javascript:;" onclick="EditarArquivoTramitadorItem();" class="btn btn-w-m btn-primary">Editar</a>
+            <a href="javascript:;" onclick="AdicionarArquivoTramitadorItem();" class="btn btn-w-m btn-primary">Adicionar</a>
+        </div>
+    </div>
+</div>

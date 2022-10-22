@@ -1,0 +1,79 @@
+﻿@page
+@{
+    ViewData["Title"] = "Item";
+    Layout = "~/Pages/Shared/Completo.cshtml";
+}
+
+@section Scripts{
+    <script src="~/plugins/dataTables/1.10.13/js/datatables.min.js?v=@(Nemag.FrontEnd.Global.AppVersion)"></script>
+    <script src="~/plugins/dataTables/1.10.13/js/dataTables.bootstrap4.min.js?v=@(Nemag.FrontEnd.Global.AppVersion)"></script>
+    <script src="~/js/pages/_Helper/DataTable.js?v=@(Nemag.FrontEnd.Global.AppVersion)"></script>
+    <script src="~/js/pages/_Helper/Pesquisa.js?v=@(Nemag.FrontEnd.Global.AppVersion)"></script>
+    <script src="~/js/pages/Produto/Item.js?v=@(Nemag.FrontEnd.Global.AppVersion)"></script>
+}
+@section Styles{
+    <link href="~/plugins/dataTables/1.10.13/css/datatables.min.css?v=@(Nemag.FrontEnd.Global.AppVersion)" rel="stylesheet">
+}
+<div class="row">
+    <div class="col-lg-12">
+        <div class="tabs-container">
+            <ul class="nav nav-tabs">
+                <li><a class="nav-link active" data-toggle="tab" href="#tab-1"> Informações básicas</a></li>
+            </ul>
+            <div class="tab-content">
+                <div id="tab-1" class="tab-pane active">
+                    <div class="panel-body animated fadeIn">
+                        <h3 class="form-title">Informações básicas</h3>
+                        <form id="formProdutoItem">
+                            <input type="hidden" name="Id" value="0" />
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <label>Nome:</label>
+                                    <input type="text" name="Nome" class="form-control" required />
+                                </div>
+                                <div class="col-md-2">
+                                    <label>Categoria:</label>
+                                    <select name="ProdutoCategoriaId" class="form-control"></select>
+                                </div>
+                                <div class="col-md-2">
+                                    <label>Código:</label>
+                                        <div class="input-group">
+                                            <span class="input-group-append">
+                                                <button type="button" class="btn btn-dark" onclick="GerarCodigoProdutoItem(this)">
+                                                    <i class="fa fa-barcode"></i>
+                                                </button>
+                                            </span>
+                                            <input type="text" name="Codigo" class="form-control" required" />
+                                        </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <label>Valor:</label>
+                                    <div class="input-group">
+                                        <span class="input-group-append">
+                                            <button type="button" class="btn btn-dark" disabled>
+                                                <i class="fa fa-money"></i>
+                                            </button>
+                                        </span>
+                                        <input type="text" name="Valor" class="form-control" required onblur="OnBlurValidarCampoDecimal(this);" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label>Descrição:</label>
+                                    <textarea class="form-control" name="Descricao" rows="4" style="resize:none"></textarea>
+                                </div>
+                            </div>
+                            <div class="row">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pull-right">
+            <a href="javascript:;" onclick="Voltar();" class="btn btn-w-m btn-primary">Voltar</a>
+            <a href="javascript:;" onclick="SalvarProdutoItem();" class="btn btn-w-m btn-primary">Salvar</a>
+        </div>
+    </div>
+</div>

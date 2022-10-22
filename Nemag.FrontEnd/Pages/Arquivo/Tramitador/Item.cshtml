@@ -1,0 +1,113 @@
+﻿@page
+@{
+    ViewData["Title"] = "Currículo";
+    Layout = "~/Pages/Shared/Completo.cshtml";
+}
+@section Scripts{
+    <script src="~/plugins/dataTables/1.10.13/js/datatables.min.js?v=@(Nemag.FrontEnd.Global.AppVersion)"></script>
+    <script src="~/plugins/dataTables/1.10.13/js/dataTables.bootstrap4.min.js?v=@(Nemag.FrontEnd.Global.AppVersion)"></script>
+    <script src="~/js/pages/_Helper/DataTable.js?v=@(Nemag.FrontEnd.Global.AppVersion)"></script>
+    <script src="~/js/pages/_Helper/Pesquisa.js?v=@(Nemag.FrontEnd.Global.AppVersion)"></script>
+    <script src="~/js/pages/Arquivo/Tramitador/Item.js?v=@(Nemag.FrontEnd.Global.AppVersion)"></script>
+}
+@section Styles{
+    <link href="~/plugins/dataTables/1.10.13/css/datatables.min.css?v=@(Nemag.FrontEnd.Global.AppVersion)" rel="stylesheet">
+}
+<div class="row">
+    <div class="col-md-12">
+        <div class="tabs-container">
+            <ul class="nav nav-tabs" role="tablist">
+                <li><a class="nav-link active" data-toggle="tab" href="#tabArquivoTramitadorItem">Informações básicas</a></li>
+            </ul>
+            <div class="tab-content">
+                <div role="tabpanel" id="tabArquivoTramitadorItem" class="tab-pane active">
+                    <div class="panel-body animated fadeIn">
+                        <h3 class="form-title">Informações básicas</h3>
+                        <form id="formArquivoTramitadorItem">
+                            <input type="hidden" name="Id" value="0" />
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Nome:</label>
+                                    <input type="text" name="Nome" class="form-control" required />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label>Descrição:</label>
+                                    <textarea type="text" name="Descricao" class="form-control" rows="3"></textarea>
+                                </div>
+                            </div>
+                            
+                        </form>
+                    </div>
+
+                    <div class="panel-body animated fadeIn">
+                        <h3 class="form-title">Email</h3>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <form id="formArquivoTramitadorEmailLista">
+                                    <div class="row titulo text-center">
+                                        <div class="col-md-12"><p>Não há registros a serem exibidos</p></div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-11">&nbsp;</div>
+                            <div class="col-md-1">
+                                <button type="button" class="col-md-12 btn btn-primary" onclick="AdicionarArquivoTramitadorEmailItem();"><i class="fa fa-plus"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel-body animated fadeIn">
+                        <h3 class="form-title">Ftp</h3>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <form id="formArquivoTramitadorFtpLista">
+                                    <div class="row titulo text-center">
+                                        <div class="col-md-12"><p>Não há registros a serem exibidos</p></div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-11">&nbsp;</div>
+                            <div class="col-md-1">
+                                <button type="button" class="col-md-12 btn btn-primary" onclick="AdicionarArquivoTramitadorFtpItem();"><i class="fa fa-plus"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel-body animated fadeIn">
+                        <h3 class="form-title">Diretorio</h3>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <form id="formArquivoTramitadorDiretorioLista">
+                                    <div class="row titulo text-center">
+                                        <div class="col-md-12"><p>Não há registros a serem exibidos</p></div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-11">&nbsp;</div>
+                            <div class="col-md-1">
+                                <button type="button" class="col-md-12 btn btn-primary" onclick="AdicionarArquivoTramitadorDiretorioItem();"><i class="fa fa-plus"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="pull-right">
+            <a href="javascript:;" onclick="ExecutarArquivoTramitadorItem();" class="btn btn-w-m btn-success">Executar</a>
+            <a href="javascript:;" onclick="Voltar();" class="btn btn-w-m btn-primary">Voltar</a>
+            <a href="javascript:;" onclick="SalvarArquivoTramitadorItem();" class="btn btn-w-m btn-primary">Salvar</a>
+        </div>
+    </div>
+</div>

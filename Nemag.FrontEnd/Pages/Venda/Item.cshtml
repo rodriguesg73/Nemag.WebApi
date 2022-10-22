@@ -1,0 +1,91 @@
+﻿@page
+@{
+    ViewData["Title"] = "Item";
+    Layout = "~/Pages/Shared/Completo.cshtml";
+}
+
+@section Scripts{
+    <script src="~/plugins/dataTables/1.10.13/js/datatables.min.js?v=@(Nemag.FrontEnd.Global.AppVersion)"></script>
+    <script src="~/plugins/dataTables/1.10.13/js/dataTables.bootstrap4.min.js?v=@(Nemag.FrontEnd.Global.AppVersion)"></script>
+    <script src="~/js/pages/_Helper/DataTable.js?v=@(Nemag.FrontEnd.Global.AppVersion)"></script>
+    <script src="~/js/pages/_Helper/Pesquisa.js?v=@(Nemag.FrontEnd.Global.AppVersion)"></script>
+    <script src="~/js/pages/Venda/Item.js?v=@(Nemag.FrontEnd.Global.AppVersion)"></script>
+    <script src="~/js/pages/Venda/Produto/Index.js?v=@(Nemag.FrontEnd.Global.AppVersion)"></script>
+}
+    @section Styles{
+    <link href="~/plugins/dataTables/1.10.13/css/datatables.min.css?v=@(Nemag.FrontEnd.Global.AppVersion)" rel="stylesheet">
+}
+<div class="row">
+    <div class="col-lg-12">
+        <div class="tabs-container">
+            <ul class="nav nav-tabs">
+                <li><a class="nav-link active" data-toggle="tab" href="#tab-1"> Informações básicas</a></li>
+                <li><a class="nav-link" data-toggle="tab" href="#tab-2"> Produtos</a></li>
+            </ul>
+            <div class="tab-content">
+                <div id="tab-1" class="tab-pane active">
+                    <div class="panel-body animated fadeIn">
+                        <h3 class="form-title">Informações básicas</h3>
+                        <form id="formVendaItem">
+                            <input type="hidden" name="Id" value="0" />
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Nome:</label>
+                                    <div class="input-group">
+                                        <input type="hidden" name="ClienteId" value="0" />
+                                        <input type="text" name="ClienteNome" class="form-control" required />
+                                        <span class="input-group-append">
+                                            <button type="button" class="btn btn-primary" onclick="LimparPesquisaItemGenerica(this);">
+                                                <i class="fa fa-eraser"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-primary" onclick="EfetuarPesquisaClienteItem(this);">
+                                                <i class="fa fa-search"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Valor Total:</label>
+                                    <div class="input-group">
+                                        <span class="input-group-append">
+                                            <button type="button" class="btn btn-dark" disabled>
+                                                <i class="fa fa-money"></i>
+                                            </button>
+                                        </span>
+                                        <input type="text" name="Valor" class="form-control" disabled />
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div id="tab-2" class="tab-pane">
+                    <div class="panel-body animated fadeIn">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h3 class="form-title">Lista de produtos</h3>
+                                <form id="formProdutoVendaLista">
+                                    <div class="row titulo text-center">
+                                        <div class="col-md-12"><p>Não há registros a serem exibidos</p></div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-11">&nbsp;</div>
+                            <div class="col-md-1">
+                                <button type="button" class="col-md-12 btn btn-primary" onclick="AdicionarProdutoVendaItem()"><i class="fa fa-plus"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="pull-right">
+            <a href="javascript:;" onclick="Voltar();" class="btn btn-w-m btn-primary">Voltar</a>
+            <a href="javascript:;" onclick="ExcluirVendaItem();" class="btn btn-w-m btn-primary">Excluir</a>
+            <a href="javascript:;" onclick="SalvarVendaItem();" class="btn btn-w-m btn-primary">Salvar</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,94 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Pages/Shared/Base.cshtml";
+}
+@section Styles {
+    <link href="~/css/compacto.css?v=@(Nemag.FrontEnd.Global.AppVersion)" rel="stylesheet">
+    @RenderSection("Styles", false)
+}
+@section Scripts {
+    <script src="~/js/pages/_Base/Compacto.js?v=@(Nemag.FrontEnd.Global.AppVersion)"></script>
+    @RenderSection("Scripts", false)
+}
+@section Modals {
+    @RenderSection("Modals", false)
+}
+<div class="ajax-request-progress" style="display: none">
+    <div class="middle-box text-center animated fadeInDown">
+        <div class="sk-spinner sk-spinner-wandering-cubes">
+            <div class="sk-cube1"></div>
+            <div class="sk-cube2"></div>
+        </div>
+    </div>
+</div>
+
+<div class="ajax-request-disconnect" style="display: none">
+    <div class="middle-box text-center animated fadeInDown">
+        <div>
+            <div class="text-center">
+                <span style="font-size: 150px;"><i class="fa fa-plug"></i></span>
+            </div>
+            <div class="text-center">
+                <a href="javascript:;" class="btn btn-info" onclick="document.location.reload(true);">Tentar novamente</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="bloqueio-acesso" style="display: none">
+    <div class="middle-box text-center lockscreen animated fadeInDown">
+        <div>
+            <form id="formLoginAcessoRenovacaoItem">
+                <h3>Usuário não encontrado</h3>
+                <div class="form-group">
+                    <input name="Senha" type="password" class="form-control" style="display: none;" required>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <a href="javascript:;" class="btn btn-info col-md-5" onclick="RenovarLoginAcessoItem($(this));" style="display:none;">Desbloquear</a>
+                        <a href="javascript:;" class="btn btn-info col-md-5" onclick="$('.bloqueio-acesso').css('display', 'none');$('.login').css('display', '');">Efetuar Login</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="login" style="display: none">
+    <div class="middle-box text-center lockscreen animated fadeInDown">
+        <div>
+            <form id="formLoginItem">
+                <h3>Login</h3>
+                <div class="form-group">
+                    <input id="inputLoginUsuario" name="Usuario" type="text" class="form-control" placeholder="Informe o usuário..." required>
+                </div>
+                <div class="form-group">
+                    <input id="inputLoginSenha" name="Senha" type="password" class="form-control" placeholder="Informe a senha..." required>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <a href="javascript:;" onclick="EfetuarLoginApi()" class="btn btn-info col-md-5">Efetuar Login</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div id="wrapper">
+    <div id="page-wrapper" class="gray-bg">
+        <div class="row border-bottom white-bg">
+            <nav class="navbar navbar-expand-lg navbar-static-top" role="navigation">
+                <a href="#" class="navbar-brand">Nemag</a>
+            </nav>
+        </div>
+        <div class="wrapper wrapper-content animated fadeInRight">
+            @RenderBody()
+        </div>
+        <div class="footer">
+            <div class="text-center">
+                <strong>Copyright</strong>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,78 @@
+﻿@page
+@{
+    ViewData["Title"] = "Lista de Logins";
+    Layout = "~/Pages/Shared/Completo.cshtml";
+}
+@section Scripts{
+    <script src="~/plugins/dataTables/1.10.13/js/datatables.min.js?v=@(Nemag.FrontEnd.Global.AppVersion)"></script>
+    <script src="~/plugins/dataTables/1.10.13/js/dataTables.bootstrap4.min.js?v=@(Nemag.FrontEnd.Global.AppVersion)"></script>
+    <script src="~/js/pages/_Helper/DataTable.js?v=@(Nemag.FrontEnd.Global.AppVersion)"></script>
+    <script src="~/js/pages/Login/Lista.js?v=@(Nemag.FrontEnd.Global.AppVersion)"></script>
+}
+@section Styles{
+    <link href="~/plugins/dataTables/1.10.13/css/datatables.min.css?v=@(Nemag.FrontEnd.Global.AppVersion)" rel="stylesheet">
+}
+<div class="row">
+    <div class="col-lg-12">
+        <div class="ibox border-bottom">
+            <div class="ibox-title">
+                <h5>Filtros</h5>
+                <div class="ibox-tools">
+                    <a class="collapse-link">
+                        <i class="fa fa-chevron-down"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="ibox-content" style="display: none;">
+                <form id="formFiltroItem">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label>Usuário:</label>
+                            <input type="text" name="Usuario" class="form-control" />
+                        </div>
+                        <div class="col-md-3">
+                            <label>Nome completo:</label>
+                            <input type="text" name="Nome" class="form-control" />
+                        </div>
+                        <div class="col-md-3">
+                            <label>Nome de exibição:</label>
+                            <input type="text" name="NomeExibicao" class="form-control" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="ibox-footer" style="display: none;">
+                <div class="pull-right">
+                    <a href="javascript:;" onclick="EfetuarPesquisaLoginLista();" class="btn btn-w-m btn-primary">Buscar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="tabs-container">
+            <ul class="nav nav-tabs">
+                <li><a class="nav-link active" data-toggle="tab" href="#tab-1"> @ViewData["Title"]</a></li>
+            </ul>
+            <div class="tab-content">
+                <div id="tab-1" class="tab-pane active">
+                    <div class="panel-body animated fadeIn">
+                        <div class="table-responsive">
+                            <table id="tableLoginLista" class="table table-bordered table-hover" style="width:100%;"></table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="pull-right">
+            <a href="javascript:;" onclick="Voltar();" class="btn btn-w-m btn-primary">Voltar</a>
+            <a href="javascript:;" onclick="EditarLoginItem();" class="btn btn-w-m btn-primary">Editar</a>
+            <a href="javascript:;" onclick="AdicionarLoginItem();" class="btn btn-w-m btn-primary">Adicionar</a>
+        </div>
+    </div>
+</div>

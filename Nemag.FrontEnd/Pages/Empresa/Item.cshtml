@@ -1,0 +1,127 @@
+﻿@page
+@{
+    ViewData["Title"] = "Item";
+    Layout = "~/Pages/Shared/Completo.cshtml";
+}
+
+@section Scripts{
+    <script src="~/plugins/dataTables/1.10.13/js/datatables.min.js?v=@(Nemag.FrontEnd.Global.AppVersion)"></script>
+    <script src="~/plugins/dataTables/1.10.13/js/dataTables.bootstrap4.min.js?v=@(Nemag.FrontEnd.Global.AppVersion)"></script>
+    <script src="~/js/pages/_Helper/DataTable.js?v=@(Nemag.FrontEnd.Global.AppVersion)"></script>
+    <script src="~/js/pages/_Helper/Pesquisa.js?v=@(Nemag.FrontEnd.Global.AppVersion)"></script>
+    <script src="~/js/pages/Empresa/Item.js?v=@(Nemag.FrontEnd.Global.AppVersion)"></script>
+}
+@section Styles{
+    <link href="~/plugins/dataTables/1.10.13/css/datatables.min.css?v=@(Nemag.FrontEnd.Global.AppVersion)" rel="stylesheet">
+}
+<div class="row">
+    <div class="col-lg-12">
+        <div class="tabs-container">
+            <ul class="nav nav-tabs">
+                <li><a class="nav-link active" data-toggle="tab" href="#tab-1"> Informações básicas</a></li>
+                <li><a class="nav-link" data-toggle="tab" href="#tab-2"> Departamentos</a></li>
+                <li><a class="nav-link" data-toggle="tab" href="#tab-3"> Categorias de mercadorias</a></li>
+            </ul>
+            <div class="tab-content">
+                <div id="tab-1" class="tab-pane active">
+                    <div class="panel-body animated fadeIn">
+                        <h3 class="form-title">Informações básicas</h3>
+                        <form id="formEmpresaItem">
+                            <input type="hidden" name="Id" value="0" />
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Nome:</label>
+                                    <div class="input-group">
+                                        <input type="hidden" name="PessoaId" value="0" />
+                                        <input type="text" name="Nome" class="form-control" required />
+                                        <span class="input-group-append">
+                                            <button type="button" class="btn btn-primary" onclick="LimparPesquisaItemGenerica(this);">
+                                                <i class="fa fa-eraser"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-primary" onclick="EfetuarPesquisaPessoaItem(this);">
+                                                <i class="fa fa-search"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Categoria:</label>
+                                    <select name="EmpresaCategoriaId" class="form-control"></select>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Nome de exibição:</label>
+                                    <input type="text" name="NomeExibicao" class="form-control" />
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div id="tab-2" class="tab-pane">
+                    <div class="panel-body animated fadeIn">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h3 class="form-title">Categorias de mercadorias</h3>
+                                <div class="table-responsive">
+                                    <table id="tableEmpresaDepartamentoLista" class="table table-bordered table-hover" style="width:100%;">
+                                        <thead>
+                                            <tr>
+                                                <th></th>
+                                                <th></th>
+                                                <th></th>
+                                                <th></th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="pull-right">
+                                    <a href="javascript:;" onclick="RemoverEmpresaDepartamentoDataTableLinhaLista();" class="btn btn-danger"><i class="fa fa-remove"></i></a>
+                                    <a href="javascript:;" onclick="EfetuarPesquisaEmpresaDepartamentoLista();" class="btn btn-primary"><i class="fa fa-plus"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="tab-3" class="tab-pane">
+                    <div class="panel-body animated fadeIn">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h3 class="form-title">Categorias de mercadorias</h3>
+                                <div class="table-responsive">
+                                    <table id="tableEmpresaMercadoriaCategoriaLista" class="table table-bordered table-hover" style="width:100%;">
+                                        <thead>
+                                            <tr>
+                                                <th></th>
+                                                <th></th>
+                                                <th></th>
+                                                <th></th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="pull-right">
+                                    <a href="javascript:;" onclick="RemoverEmpresaMercadoriaCategoriaDataTableLinhaLista();" class="btn btn-danger"><i class="fa fa-remove"></i></a>
+                                    <a href="javascript:;" onclick="EfetuarPesquisaEmpresaMercadoriaCategoriaLista();" class="btn btn-primary"><i class="fa fa-plus"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pull-right">
+            <a href="javascript:;" onclick="Voltar();" class="btn btn-w-m btn-primary">Voltar</a>
+            <a href="javascript:;" onclick="ExcluirEmpresaItem();" class="btn btn-w-m btn-primary">Excluir</a>
+            <a href="javascript:;" onclick="SalvarEmpresaItem();" class="btn btn-w-m btn-primary">Salvar</a>
+        </div>
+    </div>
+</div>
