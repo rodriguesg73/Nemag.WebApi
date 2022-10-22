@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1169
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nemag.Ferramenta.Core", "Nemag.Ferramenta.Core\Nemag.Ferramenta.Core.csproj", "{4A5BB082-27BD-4283-8C34-8669C9496885}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nemag.Database", "..\Nemag.Database\Nemag.Database\Nemag.Database.csproj", "{7FAF9AE6-50BA-4E78-8927-BA788091E22D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4A5BB082-27BD-4283-8C34-8669C9496885}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A5BB082-27BD-4283-8C34-8669C9496885}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A5BB082-27BD-4283-8C34-8669C9496885}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A5BB082-27BD-4283-8C34-8669C9496885}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FAF9AE6-50BA-4E78-8927-BA788091E22D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FAF9AE6-50BA-4E78-8927-BA788091E22D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FAF9AE6-50BA-4E78-8927-BA788091E22D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FAF9AE6-50BA-4E78-8927-BA788091E22D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FB90C8C1-F506-413E-99B0-26AFBD541B86}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://mentecriativa.visualstudio.com/
+		SccProjectUniqueName0 = ..\\Nemag.Database\\Nemag.Database\\Nemag.Database.csproj
+		SccProjectName0 = ../Nemag.Database/Nemag.Database
+		SccLocalPath0 = ..\\Nemag.Database\\Nemag.Database
+		SccLocalPath1 = .
+		SccProjectUniqueName2 = Nemag.Ferramenta.Core\\Nemag.Ferramenta.Core.csproj
+		SccProjectName2 = Nemag.Ferramenta.Core
+		SccLocalPath2 = Nemag.Ferramenta.Core
+	EndGlobalSection
+EndGlobal
